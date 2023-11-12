@@ -1,1 +1,1 @@
-# parallel-array-summary-java
+# Parallel Array Summary Java
