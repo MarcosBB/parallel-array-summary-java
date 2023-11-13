@@ -1,9 +1,9 @@
 public class Object {
+    private long id;
     private int total;
     private float grupo;
-    private int id;
-    
-    public Object(int id) {
+
+    public Object(long id) {
         this.total = new java.util.Random().nextInt(10) + 1;
         this.grupo = new java.util.Random().nextFloat() * 4 + 1;
         this.id = id;
@@ -17,7 +17,7 @@ public class Object {
         return grupo;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 }
