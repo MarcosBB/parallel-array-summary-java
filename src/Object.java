@@ -1,20 +1,20 @@
 public class Object {
     private long id;
-    private int total;
-    private float grupo;
+    private float total;
+    private int group;
 
     public Object(long id) {
-        this.total = new java.util.Random().nextInt(10) + 1;
-        this.grupo = new java.util.Random().nextFloat() * 4 + 1;
+        this.total = (float) (new java.util.Random().nextFloat() * 10);
+        this.group = new java.util.Random().nextInt(5) + 1;
         this.id = id;
     }
 
-    public int getTotal() {
+    public float getTotal() {
         return total;
     }
 
-    public float getGrupo() {
-        return grupo;
+    public int getGroup() {
+        return group;
     }
 
     public long getId() {

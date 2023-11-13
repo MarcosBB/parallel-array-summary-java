@@ -1,6 +1,5 @@
 import java.util.List;
 import java.util.Map;
-import java.util.Dictionary;
 
 public class ProcessingThread extends Thread {
     private List<Object> subset;
@@ -8,7 +7,6 @@ public class ProcessingThread extends Thread {
     private double totalSum;
     private long lesThan5Quantity;
     private long moreThan5Quantity;
-    // private Dictionary totalSumByGroup;
 
     public ProcessingThread(List<Object> subset, ObjectsList objectsList) {
         this.subset = subset;
@@ -20,12 +18,19 @@ public class ProcessingThread extends Thread {
 
     public void run() {
         for (Object object : subset) {
-            totalSum += object.getTotal();
-            if (object.getTotal() < 5) {
+            int group = object.getGroup();
+            double total = object.getTotal();
+
+            totalSum += total;
+
+            if (group < 5) {
                 lesThan5Quantity++;
             } else {
                 moreThan5Quantity++;
             }
+
+            objectsList.addGroupsTotal(group, total);
+
         }
 
         objectsList.addTotalSum(totalSum);

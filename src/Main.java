@@ -57,21 +57,20 @@ public class Main {
         ObjectsList objectsList = new ObjectsList(objects);
         List<ProcessingThread> processingThreads = new ArrayList<ProcessingThread>();
         double objectsDivision = objects.size() / T;
-        
+
         for (int i = 0; i < T; i++) {
             int start = (int) objectsDivision * i;
             int end = (int) objectsDivision * (i + 1);
             if (i == T - 1) {
                 end = objects.size();
             }
-            
+
             List<Object> subset = objects.subList(start, end);
             processingThreads.add(new ProcessingThread(subset, objectsList));
         }
-        
+
         long startTime = System.currentTimeMillis();
-        for (ProcessingThread thread : 
-        processingThreads) {
+        for (ProcessingThread thread : processingThreads) {
             thread.start();
         }
 
@@ -86,8 +85,12 @@ public class Main {
         System.out.println("Total de objetos com valor menor que 5: " + objectsList.getLesThan5Quantity());
         System.out.println("Total de objetos com valor maior ou igual a 5: " + objectsList.getMoreThan5Quantity());
         System.out.println("Soma total dos valores dos objetos: " + objectsList.getTotalSum());
+        System.out.println("Soma total dos valores dos objetos por grupo:");
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("    Grupo " + i + ": " + objectsList.getGroupsTotal().get(i));
+        }
         long endTime = System.currentTimeMillis();
-        System.out.println("Tempo de processamento: " + endTime - startTime + " ms");
+        System.out.println("Tempo de processamento: " + (endTime - startTime) + " ms");
 
     }
 }
