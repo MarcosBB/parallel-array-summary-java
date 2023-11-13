@@ -48,24 +48,25 @@ public class Main {
 
         getArgs(args);
         long objectsQuantity = Math.round(Math.pow(10, N));
-        List<Object> objects = createObjects(objectsQuantity);
 
-        System.out.println("Criando " + objectsQuantity + " objetos:");
-        createObjects(objectsQuantity);
+        System.out.println();
+        System.out.println("Criando " + objectsQuantity + " objetos...");
+        List<Object> objects = createObjects(objectsQuantity);
         System.out.println("Total de objetos criados: " + objects.size());
 
-        System.out.println("Processando objetos:");
+        System.out.println("Processando objetos...");
         ObjectsList objectsList = new ObjectsList(objects);
         List<ProcessingThread> processingThreads = new ArrayList<ProcessingThread>();
         double objectsDivision = objects.size() / T;
-        for (int i = 0; i < T; i++) {
-            List<Object> subset = objects.subList((int) objectsDivision * i, (int) objectsDivision * (i + 1));
-            System.out.println("Thread " + i + " processando " + subset.size() + " objetos.");
 
-            for (Object object : subset) {
-                System.out.print(object.getId() + " ");
+        for (int i = 0; i < T; i++) {
+            int start = (int) objectsDivision * i;
+            int end = (int) objectsDivision * (i + 1);
+            if (i == T - 1) {
+                end = objects.size();
             }
 
+            List<Object> subset = objects.subList(start, end);
             processingThreads.add(new ProcessingThread(subset, objectsList));
         }
 
@@ -80,7 +81,7 @@ public class Main {
                 System.exit(1);
             }
         }
-
+        System.out.println();
         System.out.println("Total de objetos com valor menor que 5: " + objectsList.getLesThan5Quantity());
         System.out.println("Total de objetos com valor maior ou igual a 5: " + objectsList.getMoreThan5Quantity());
         System.out.println("Soma total dos valores dos objetos: " + objectsList.getTotalSum());

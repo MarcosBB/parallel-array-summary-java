@@ -15,7 +15,6 @@ public class CreationThread extends Thread {
     }
 
     public void run() {
-        System.out.println("thread " + id + " rodando");
         List<Object> myObjectList = new ArrayList<Object>();
         for (long i = start; i <= end; i++) {
             myObjectList.add(new Object(i));
