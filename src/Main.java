@@ -25,7 +25,7 @@ public class Main {
 
         List<Object> objectsList = Collections.synchronizedList(new ArrayList<Object>());
         List<CreationThread> creationThreads = new ArrayList<CreationThread>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             creationThreads.add(new CreationThread(i, objectsDivision * i + 1, objectsDivision * (i + 1), objectsList));
         }
 
@@ -53,5 +53,37 @@ public class Main {
         System.out.println("Criando " + objectsQuantity + " objetos:");
         createObjects(objectsQuantity);
         System.out.println("Total de objetos criados: " + objects.size());
+
+        System.out.println("Processando objetos:");
+        ObjectsList objectsList = new ObjectsList(objects);
+        List<ProcessingThread> processingThreads = new ArrayList<ProcessingThread>();
+        double objectsDivision = objects.size() / T;
+        for (int i = 0; i < T; i++) {
+            List<Object> subset = objects.subList((int) objectsDivision * i, (int) objectsDivision * (i + 1));
+            System.out.println("Thread " + i + " processando " + subset.size() + " objetos.");
+
+            for (Object object : subset) {
+                System.out.print(object.getId() + " ");
+            }
+
+            processingThreads.add(new ProcessingThread(subset, objectsList));
+        }
+
+        for (ProcessingThread thread : processingThreads) {
+            thread.start();
+        }
+
+        for (ProcessingThread thread : processingThreads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                System.exit(1);
+            }
+        }
+
+        System.out.println("Total de objetos com valor menor que 5: " + objectsList.getLesThan5Quantity());
+        System.out.println("Total de objetos com valor maior ou igual a 5: " + objectsList.getMoreThan5Quantity());
+        System.out.println("Soma total dos valores dos objetos: " + objectsList.getTotalSum());
+
     }
 }
