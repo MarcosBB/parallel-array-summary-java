@@ -1,0 +1,40 @@
+Parâmetros passados:
+N = 9
+T = 1
+
+Criando 1000000000 objetos...
+Exception in thread "Thread-3" java.lang.OutOfMemoryError: Java heap space
+	at CreationThread.run(CreationThread.java:20)
+Exception in thread "Thread-5" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3513)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3482)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:237)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:244)
+	at java.base/java.util.ArrayList.add(ArrayList.java:483)
+	at java.base/java.util.ArrayList.add(ArrayList.java:496)
+	at CreationThread.run(CreationThread.java:20)
+Exception in thread "Thread-1" java.lang.OutOfMemoryError: Java heap space
+	at CreationThread.run(CreationThread.java:20)
+Exception in thread "Thread-0" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Thread-7" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Random.<init>(Random.java:355)
+	at java.base/java.util.Random.<init>(Random.java:318)
+	at Object.<init>(Object.java:8)
+	at CreationThread.run(CreationThread.java:20)
+Exception in thread "Thread-2" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Thread-8" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Thread-4" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Thread-6" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Thread-9" java.lang.OutOfMemoryError: Java heap space
+Total de objetos criados: 0
+
+Total de objetos com valor menor que 5: 0
+Total de objetos com valor maior ou igual a 5: 0
+Soma total dos valores dos objetos: 0.0
+Soma total dos valores dos objetos por grupo:
+    Grupo 1: 0.0
+    Grupo 2: 0.0
+    Grupo 3: 0.0
+    Grupo 4: 0.0
+    Grupo 5: 0.0
+Tempo de processamento: 1 ms

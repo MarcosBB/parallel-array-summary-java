@@ -1,0 +1,17 @@
+Parâmetros passados:
+N = 7
+T = 16
+
+Criando 10000000 objetos...
+Total de objetos criados: 10000000
+
+Total de objetos com valor menor que 5: 7999665
+Total de objetos com valor maior ou igual a 5: 2000335
+Soma total dos valores dos objetos: 4.9997703589366674E7
+Soma total dos valores dos objetos por grupo:
+    Grupo 1: 1.0001166130218983E7
+    Grupo 2: 9992102.16191423
+    Grupo 3: 1.0002481942231536E7
+    Grupo 4: 9998212.421794891
+    Grupo 5: 1.0003740933207035E7
+Tempo de processamento: 719 ms

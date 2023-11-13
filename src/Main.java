@@ -81,6 +81,7 @@ public class Main {
                 System.exit(1);
             }
         }
+        long endTime = System.currentTimeMillis();
         System.out.println();
         System.out.println("Total de objetos com valor menor que 5: " + objectsList.getLesThan5Quantity());
         System.out.println("Total de objetos com valor maior ou igual a 5: " + objectsList.getMoreThan5Quantity());
@@ -89,7 +90,6 @@ public class Main {
         for (int i = 1; i <= 5; i++) {
             System.out.println("    Grupo " + i + ": " + objectsList.getGroupsTotal().get(i));
         }
-        long endTime = System.currentTimeMillis();
         System.out.println("Tempo de processamento: " + (endTime - startTime) + " ms");
 
     }
