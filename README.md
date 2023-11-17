@@ -19,7 +19,9 @@
 5. Para cada teste registre o tempo gasto na etapa de Processamento.
 
 ## Build do projeto
+Antes de mais nada tenha o **Java** instalado na sua maquina Linux ou MacOS.
 
+Compile o projeto:
 ```bash
   cd src
   javac Main.java
