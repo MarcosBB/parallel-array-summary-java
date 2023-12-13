@@ -33,8 +33,12 @@ public class ObjectsList {
         this.moreThan5Quantity += moreThan5Quantity;
     }
 
-    public synchronized void addGroupsTotal(int group, double total) {
-        this.groupsTotal.put(group, this.groupsTotal.get(group) + total);
+    public synchronized void addGroupsTotal(Map<Integer, Double> groupsTotalToAdd) {
+        for (Map.Entry<Integer, Double> entry : groupsTotalToAdd.entrySet()) {
+            int group = entry.getKey();
+            double total = entry.getValue();
+            this.groupsTotal.put(group, this.groupsTotal.get(group) + total);
+        }
     }
 
     public double getTotalSum() {
