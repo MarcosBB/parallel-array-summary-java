@@ -5,13 +5,13 @@ T = 1
 Criando 100000 objetos...
 Total de objetos criados: 100000
 
-Total de objetos com valor menor que 5: 79878
-Total de objetos com valor maior ou igual a 5: 20122
-Soma total dos valores dos objetos: 499830.49821197987
+Total de objetos com valor menor que 5: 80213
+Total de objetos com valor maior ou igual a 5: 19787
+Soma total dos valores dos objetos: 499614.7540626526
 Soma total dos valores dos objetos por grupo:
-    Grupo 1: 100182.48501384258
-    Grupo 2: 99875.75010371208
-    Grupo 3: 99349.65411829948
-    Grupo 4: 98902.9725548029
-    Grupo 5: 101519.63642132282
-Tempo de processamento: 7 ms
+    Grupo 1: 100115.07910656929
+    Grupo 2: 99820.25470209122
+    Grupo 3: 100688.62466061115
+    Grupo 4: 99943.7369786501
+    Grupo 5: 99047.05861473083
+Tempo de processamento: 11 ms

@@ -40,10 +40,14 @@ public class ProcessingThread extends Thread {
 
         }
 
+        updateObjectsList();
+
+    }
+
+    private void updateObjectsList() {
         objectsList.addGroupsTotal(groupsTotalToAdd);
         objectsList.addTotalSum(totalSum);
         objectsList.addLesThan5Quantity(lesThan5Quantity);
         objectsList.addMoreThan5Quantity(moreThan5Quantity);
-
     }
 }
