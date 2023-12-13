@@ -38,3 +38,11 @@ Ex:
   java Main.java 2 4
 ```
 significa que vai criar `10ˆ2 = 100` objetos e processá-los em `4` threads 
+
+## Resultados
+Você pode ver os resultados dos testes no arquivo `results.txt` na raiz do projeto.
+
+caso queira atualizar os resultados basta rodar o script python que atualiza os resultados:
+```bash
+  python3 update_results.py
+```
